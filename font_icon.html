@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>提交字体图标</title>
+  <style>
+    /*记住引用的字体文字路径要加http*/
+    @font-face {
+      font-family: 'jirengu';  /* project id 539330 */
+      src: url('http://at.alicdn.com/t/font_539330_u6035w3cq0gousor.eot');
+      src: url('http://at.alicdn.com/t/font_539330_u6035w3cq0gousor.eot?#iefix') format('embedded-opentype'),
+      url('http://at.alicdn.com/t/font_539330_u6035w3cq0gousor.woff') format('woff'),
+      url('http://at.alicdn.com/t/font_539330_u6035w3cq0gousor.ttf') format('truetype'),
+      url('http://at.alicdn.com/t/font_539330_u6035w3cq0gousor.svg#iconfont') format('svg');
+      }
+    .icon {
+      font-family: jirengu;
+      text-decoration: none;
+      font-size: 40px;
+      text-shadow: 1px 1px 2px rgba(255, 0, 0, .2);
+    }
+    .icon::after {
+      content: "左边这个小飞机就是我增加的icon-font图标跳链！"
+    }
+  </style>
+</head>
+<body>
+  <form action="1.php" method="post">
+    <fieldset>
+      <legend>账户信息</legend>
+      <!--用户名-->
+      <font color="red">*</font>用户名：<input type="text" name="username">
+      <br /><br />
+      <!--密码-->
+      <font color="red">*</font>密&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" name="password">
+      <br /><br />
+      <!--单选-radio-->
+      &nbsp;&nbsp;性&nbsp;&nbsp;&nbsp;&nbsp;别：
+      <input type="radio" name="gender" value="male" checked> 男
+      <input type="radio" name="gender" value="female"> 女
+      <br /><br />
+      &nbsp;
+      <input type="submit" value="点我上传">
+    </fieldset>
+
+    <fieldset>
+      <legend>公司信息</legend>
+      公司名称： <input type="text" name="corporationName">
+      <br />
+      <!--下拉菜单1-->
+      公司所在地：
+      <select name="area1">
+        <option value="beijing" selected>---请选择---</option>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+        <option value="henan">河南</option>
+      </select>
+      <!--下拉菜单2-->
+      <select name="area2">
+        <option value="beijing" selected>---请选择---</option>
+        <!--选项组-->
+        <optgroup label="一线城市">
+          <option value="北京">北京</option>
+          <option value="上海">上海</option>
+          <option value="深圳">深圳</option>
+          <option value="广州">广州</option>
+        </optgroup>
+        <optgroup label="二线城市">
+          <option value="福州">福州</option>
+          <option value="厦门">厦门</option>
+          <option value="杭州">杭州</option>
+          <option value="成都">成都</option>
+        </optgroup>
+      </select>
+      <!--下拉菜单3-->
+      <select name="area3">
+        <option value="beijing" selected>---请选择---</option>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+        <option value="henan">河南</option>
+      </select>
+      <!--复选框-->
+      <input type="checkbox" name="IT" value="computer" checked> 电脑
+      <input type="checkbox" name="IT" value="appliance"> 家电
+      <input type="checkbox" name="IT" value="telecom"> 通讯设备
+      <input type="checkbox" name="IT" value="digital"> 数码产品
+      <br /><br />
+      <select name="area4" multiple>
+        <option value="beijing" selected>---请选择---</option>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+        <option value="henan">河南</option>
+      </select>
+      <!--文本区域-->
+      公司介绍：<textarea name="introduction" cols="10" rows="2">在此输入...</textarea>
+      <!--文件上传-->
+      营业执照上传：<input type="file">
+      <br /><br />
+      <input type="hidden" name="abcd" value="123456">
+      <a class="icon" href="www.baidu.com">&#xe66b;</a>
+    </fieldset>
+  </form>
+</body>
+</html>
