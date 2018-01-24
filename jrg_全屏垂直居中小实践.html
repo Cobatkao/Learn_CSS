@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://js.jirengu.com
+
+Copyright (c) 2018 by Cobatkao (http://js.jirengu.com/silaf/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>全屏企业站小实践</title>
+<style id="jsbin-css">
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Heiti SC;
+}
+header {
+  background: rgba(0, 0, 0, .9);
+  height: 100vh;
+  color: #fff;
+  position: relative;/* 相对/绝对定位实现居中 */
+}
+main {
+  background: rgba(230, 230, 250, .9);
+  height: 100vh;
+}
+footer {
+  background: rgba(119, 136, 153, .9);
+  height: 100vh;
+}
+header .intro {
+  min-width: 500px;
+  margin: 0 auto;/*水平居中*/
+  text-align: center;/* 行内元素居中 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+header .intro h1 {
+  margin-top: 30px;
+  font-size: 48px;
+}
+header .intro p {
+  margin-top: 30px;
+}
+header .intro button {
+  margin-top: 30px;
+}
+header button {
+  padding: 10px;
+  border-radius: 3px;
+}
+header button a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+  <!-- 需求：首屏满屏的intro，文字处于正中心 -->
+  <header>
+    <div class="intro">
+      <h1>欢迎来到N78星云</h1>
+      <p>光之国体积为地球的60倍，重力为地球的120倍以上，四周都充满了来自人工太阳的放射性光线</p>
+      <button><a href="https://baike.baidu.com/item/m78%E6%98%9F%E4%BA%91/20353950">点我前往!</a></button>
+    </div>
+  </header>
+  <main>main</main>
+  <footer>footer</footer>
+</body>
+</html>
