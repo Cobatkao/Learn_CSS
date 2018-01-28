@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>3-column-layout</title>
+  <style>
+  /*第一种写法*/
+    /** {
+      margin: 0;
+      padding: 0;
+    }
+    .wrap {
+      width: 100vw;
+      height: 100vh;
+    }
+    .lf {
+      float: left;
+      background: red;
+      width: 200px;
+      height: 60%;
+    }
+    .rt {
+      float: right;
+      background: blue;
+      width: 200px;
+      height: 60%;
+    }
+    .main {
+      margin-left: 205px;
+      margin-right: 205px;
+      background: pink;
+      height: 80%;
+    }*/
+
+    /*第二种写法*/
+    /*右边两栏*/
+    /** {
+      margin: 0;
+      padding: 0;
+    }*/
+    body {
+      font-family: helvetica;
+    }
+    a {
+      color: gray;
+      font-weight: bold;
+    }
+    ul > li {
+      list-style-type: none;
+    }
+    .content {
+      width: 890px;
+      margin: 0 auto;
+      background: #ffc;
+    }
+    .content::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .header {
+      background: #ccf;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      margin-bottom: 20px;
+    }
+    .header > p {
+      font-size: 48px;
+      font-weight: bold;
+    }
+    .content > .primary {
+      width: 670px;
+      float: right;
+      display: inline;
+      line-height: 1.8;
+    }
+    /*左栏*/
+    .content > .secondary {
+      width: 200px;
+      float: left;
+      display: inline;
+      background: #ccc;
+    }
+    .secondary li {
+      padding: 5px 0;
+    }
+    /*中栏*/
+    .content > .primary > .primary {
+      width: 430px;
+      float: left;
+      display: inline;
+      background: lightgreen;
+      /*padding-left: 10px;*/
+    }
+    /*右栏*/
+    .content > .primary > .secondary {
+      width: 200px;
+      float: right;
+      display: inline;
+      padding: 0 10px;
+      background: #fcc;
+    }
+  </style>
+</head>
+<body>
+  <!-- 第一种写法：侧栏度佛那个，中间栏用边距调节 -->
+  <!-- <div class="wrap">
+    <div class="lf">我是左栏</div>
+    <div class="rt">我是中间栏</div>
+    <div class="main">我是右栏</div>
+  </div> -->
+
+  <!-- 第二种写法：全部浮动 -->
+  <div class="content">
+    <div class="header">
+      <p>
+        三栏布局小实践（全部浮动）
+      </p>
+    </div>
+    <!-- 中栏+右侧栏 -->
+    <div class="primary">
+      <!-- 中栏 -->
+      <div class="primary">
+        <h1>Lorem ipsum dolor</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h1>Consectetuer adipi</h1>
+        <p>Consectetuer adipi scing elit dom et. Aennean commodo ligula ege Aenean madssa. Cum sociis natoque etc.Lorem ipsum dolor ligula ege. Consectetuer adipi scing elit dom et. Aennean commodo ligula ege Aenean madssa. Cum sociis natoque etc. Lorem ipsum dolor ligula ege madssa.</p>
+      </div>
+      <!-- 右侧栏 -->
+      <div class="secondary">
+        <h3>Consectetuer adipi</h3>
+        <p>Consectetuer adipi scing elit dom et. Aennean commodo ligula ege Aenean madssa. Cum sociis natoque etc.Lorem ipsum dolor ligula ege. Consectetuer adipi scing elit dom et. Aennean commodo ligula ege Aenean madssa. Cum sociis natoque etc.Lorem ipsum dolor ligula ege madssa.</p>
+        <p>Consectetuer adipi scing elit dom et. Aennean commodo ligula ege Aenean madssa. Cum sociis natoque etc.Lorem ipsum dolor ligula ege. Consectetuer adipi scing elit dom et. Aennean commodo ligula ege Aenean madssa. Cum sociis natoque etc.Lorem ipsum dolor ligula ege madssa.</p>
+      </div>
+    </div>
+    <!-- 左侧栏 -->
+    <div class="secondary">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Client</a></li>
+        <li><a href="#">Case Studies</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

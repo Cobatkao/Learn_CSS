@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>pic-centralized</title>
+  <style>
+    .wrap {
+      border: 3px solid red;
+      width: 400px;
+      height: 400px;
+      position: relative;
+    }
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .wrap::after {
+      content: "使用定位+translate实现垂直水平居中";
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img src="https://jirengu.com/data/upload/2017/0118/17/587f39fba695a.png" alt="jirengu">
+  </div>
+</body>
+</html>
