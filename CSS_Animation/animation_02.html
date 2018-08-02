@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aniamtion_02</title>
+  <style type="text/css">
+    #test {
+      width: 200px;
+      height: 400px;
+      position: relative;
+      background-color: #ffd800;
+      animation-name: test; /*动画名称*/
+      animation-duration: 3s;
+      animation-timing-function: ease; /*时间函数*/
+      animation-delay: .2s;
+      animation-iteration-count: 3; /*循环次数*/
+      animation-direction: normal; /*动画方向*/
+      animation-play-state: running; /*播放状态*/
+      animation-fill-mode: none; /*填充模式*/
+    }
+    @keyframes test {
+      from {background: blue; left: 0px; animation-timing-function: ease;}
+      25% {background: green; left: 50px; animation-timing-function: ease-in;}
+      50% {background: gray; left: 100px; animation-timing-function: ease-out;}
+      75% {background: red; left: 150px; animation-timing-function: linear;}
+      to {background: black; left: 200px; animation-timing-function: step-end;}
+    }
+  </style>
+</head>
+<body>
+  <div id="test"></div>
+  <script type="text/javascript">
+    // 分别对应：动画开始时 | 动画结束时 | 每次循环结束时
+    var obj = document.getElementById('test')
+    obj.addEventListener('animationstart', function(e) {
+      this.innerHTML = '动画开始啦！'
+      this.style.fontSize = 48 + 'px'
+      this.style.color = 'yellow'
+      // 这三个事件的事件对象，都有animationName和elapsedTime属性这两个私有属性
+      console.log(e.animationName)
+      console.log(e.elapsedTime)
+    })
+    obj.addEventListener('animationend', function() {
+      this.innerHTML = '动画已结束！！'
+      this.style.color = 'green'
+    })
+    obj.addEventListener('animationiteration', function() {
+      this.innerHTML = '一次循环！'
+      this.style.color = 'red'
+    })
+  </script>
+</body>
+</html>

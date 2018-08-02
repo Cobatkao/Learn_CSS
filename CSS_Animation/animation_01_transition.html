@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animation_demo</title>
+  <style type="text/css">
+    #test {
+      width: 100px;
+      height: 200px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      background-color: #ffd800;
+      transition: width 1s linear .2s, height 1s linear .2s, background 1s cubic-bezier(.57,.07,.69,.16) .2s;
+    }
+    #test:hover {
+      width: 200px;
+      height: 100px;
+      background: #00ff90;
+    }
+  </style>
+</head>
+<body>
+  <div id="test"><p style="text-align: center">transition测试</p></div>
+  <script type="text/javascript">
+    var index = 0
+    var test = document.getElementById('test')
+    test.addEventListener('transitionend', testFunc)
+    // 测试事件
+    // function testFunc(e) {
+    //   e = e || window.event
+    //   test.innerHTML = 'propertyName: ' + e.propertyName + ';elapsedTime: '
+    //   + e.elapsedTime + ';pseudoElement:' + e.pseudoElement
+    //   test.style.color = 'red'
+    // }
+    // 过渡分为两个阶段：前进阶段和反向阶段
+    function testFunc() {
+      index++
+      test.innerHTML = index
+    }
+  </script>
+</body>
+</html>

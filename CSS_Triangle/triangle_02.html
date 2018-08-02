@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>triangle_02</title>
+  <style type="text/css">
+    .triangle  {
+      background: #ccc;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .common {
+      height: 0;
+      width: 0;
+      display: block;
+      margin-top: 20px;
+    }
+    .triangle_top {
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid #f6f;
+    }
+    .triangle_bottom {
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-top: 100px solid #9f0;
+    }
+    .triangle_left {
+      border-top: 75px solid transparent;
+      border-bottom: 75px solid transparent;
+      border-right: 150px solid #909;
+    }
+    .triangle_right {
+      border-top: 75px solid transparent;
+      border-bottom: 75px solid transparent;
+      border-left: 150px solid #f60;
+    }
+  </style>
+</head>
+<body>
+  <div class="triangle">
+    <div class="triangle_top common"></div>
+    <div class="triangle_bottom common"></div>
+    <div class="triangle_left common"></div>
+    <div class="triangle_right common"></div>
+  </div>
+</body>
+</html>
