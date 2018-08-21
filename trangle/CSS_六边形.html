@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS_六边形</title>
+  <style type="text/css">
+    .outer {
+      background-color: lightcoral;
+      width: 800px;
+      height: 800px;
+      border: 1px dashed blue;
+      position: relative;
+      margin: 0 auto;
+    }
+    .mid {
+      width: 250px;
+      height: 500px;
+      background-color: aliceblue;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      line-height: 500px;
+      color: lightcoral;
+      font-weight: 900;
+    }
+    .mid::before {
+      content: '';
+      position: absolute;
+      left: -135px;
+      top: 0;      
+      width: 0;
+      border-top: 250px solid transparent;
+      border-bottom: 250px solid transparent;
+      border-right: 135px solid aliceblue;
+    }
+    .mid::after {
+      content: '';
+      position: absolute;      
+      left: 250px;
+      top: 0;      
+      width: 0;
+      border-top: 250px solid transparent;
+      border-bottom: 250px solid transparent;
+      border-left: 135px solid aliceblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="mid">
+      CSS六边形，单个div加伪元素实现
+    </div>
+  </div>
+</body>
+</html>
