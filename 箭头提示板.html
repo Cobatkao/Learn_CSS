@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>实现尖角</title>
+  <style type="text/css">
+    .wrap {
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .send {
+      position: relative;
+      width: 250px;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      background: #F8C301;
+      border-radius: 5px;
+      font-family: Helvetica;
+      font-size: 18px;
+      text-shadow: 2px 2px 5px black;
+      /*这里可以看出两种阴影效果的不同，用后者使得其有更好的影阴影效果*/
+      filter: drop-shadow(5px 5px 10px #fff);
+      /* box-shadow: 5px 5px 10px #fff; */
+    }
+    .arrow {
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: -30px;
+      top: 15px;
+      border: 15px solid transparent;
+      border-right-color: #F8C301;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="send">
+      <i class="arrow"></i>
+      drop_shadow的箭头对话框
+    </div>
+  </div>
+</body>
+</html>
