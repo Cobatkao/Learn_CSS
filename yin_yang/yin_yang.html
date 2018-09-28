@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>yin_yang demo</title>
+  <style type="text/css">
+    .wrap {
+      width: 100vw;
+      height: 100vh;
+      background: #bbb;
+      position: relative;
+    }
+    #yin-yang {
+      /* 利用左右边框的特性，对左右边框半圆化，然后组合呈圆形 */
+      width: 0;
+      height: 300px;
+      border-left: 150px solid #fff;
+      border-right: 150px solid #000;
+      border-radius: 50%;
+      box-shadow: 0 0 50px 0 #333;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+    #yin {
+      width: 150px;
+      height: 150px;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: -75px;
+    }
+    #yang {
+      width: 150px;
+      height: 150px;
+      background: #000;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: -75px;
+    }
+    #yin::before {
+      content: '';
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      top: -75%;
+      left: 25%;
+      z-index: 999;
+    }
+    #yang::before {
+      content: '';
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background-color: #000;
+      position: absolute;
+      bottom: -75%;
+      left: 25%;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+      <div id="yin-yang">
+          <div id="yin"></div>
+          <div id="yang"></div>
+        </div>
+  </div>
+</body>
+</html>
