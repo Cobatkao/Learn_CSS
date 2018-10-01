@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>旋转的阴阳八卦图</title>
+  <style type="text/css">
+    body {
+      background: #E8CB7C;
+    }
+    #verse {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: aquamarine;
+      font-size: 3em;
+      text-align: center
+    }
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+        box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.637);
+      }
+      100% {
+        transform: rotate(360deg);
+        box-shadow: 0 0 80px 20px #5B5B5B;
+      }
+    }
+    #yinyang {
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(0,0,0,1) 51%,rgba(0,0,0,1) 100%);
+      position: relative;
+      margin: 80px auto;
+      animation: 3s linear infinite spin;
+    }
+    #yinyang::before {
+      content: '';
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #000;
+      border: 80px solid #fff;
+      position: absolute;
+      left: 0;
+      top: 110px;
+    }
+    #yinyang::after {
+      content: '';
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      border: 80px solid #000;
+      position: absolute;
+      right: 0;
+      top: 110px;
+    }
+  </style>
+</head>
+<body>
+  <div id="verse"><q>道生一，一生二，二生三，三生万物</q></div>
+  <div id="yinyang"></div>
+</body>
+</html>
